@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f7">
+  <title>SOS Trigger Home — Sahayak AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <link rel="stylesheet" href="sos_trigger.css">
+</head>
+<body>
+  <div class="app" id="sos-home">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><span class="material-symbols-outlined">shield_person</span></span>
+        <div>
+          <span class="brand-name">Sahayak AI</span>
+          <span class="brand-subtitle">Personal Safety</span>
+        </div>
+      </div>
+      <span class="ready-badge" role="status"><span class="ready-dot" aria-hidden="true"></span>Protection Ready</span>
+    </header>
+
+    <main>
+      <section class="location-section" aria-label="Role and current location">
+        <div class="role-row">
+          <span>Role: <strong>Help Seeker</strong></span>
+          <a class="text-link" href="route_map.html">Cell Map <span aria-hidden="true">→</span></a>
+        </div>
+        <article class="location-card" aria-labelledby="location-title">
+          <div class="location-heading">
+            <span id="location-title"><span class="gps-icon" aria-hidden="true">◎</span> Live GPS + Cell Tower</span>
+            <span class="accuracy">±6m</span>
+          </div>
+          <p class="address">MG Road, Bengaluru, KA</p>
+          <p class="coordinates">12.9716° N, 77.5946° E · Tower #418</p>
+        </article>
+      </section>
+
+      <section class="sos-section" aria-labelledby="sos-title">
+        <div>
+          <h1 id="sos-title">Emergency SOS</h1>
+          <p class="instruction" id="sos-instruction">Hold for 3 seconds, press Power 5×, or say “Sahayak Help” to alert 4 contacts and dial 112.</p>
+        </div>
+        <div class="sos-rings">
+          <div class="sos-rings-inner">
+            <button class="sos-button" id="sos-hold-btn" type="button" aria-label="Hold for 3 seconds to trigger SOS" aria-describedby="sos-instruction">
+              <span class="sos-label" id="sos-btn-label">SOS</span>
+              <span class="sos-subtitle" id="sos-btn-sub">Hold 3s</span>
+            </button>
+          </div>
+        </div>
+        <div class="readiness" aria-label="SOS trigger readiness">
+          <div class="readiness-item"><span class="material-symbols-outlined" aria-hidden="true">power_settings_new</span><span>Power 5×</span></div>
+          <div class="readiness-item"><span class="material-symbols-outlined" aria-hidden="true">record_voice_over</span><span>Voice SOS</span></div>
+          <div class="readiness-item"><span class="material-symbols-outlined" aria-hidden="true">videocam</span><span>Mic &amp; Cam</span></div>
+        </div>
+      </section>
+
+      <div class="safe-actions">
+        <button class="share-button" id="share-location-btn" type="button" aria-pressed="false">
+          <span class="material-symbols-outlined" aria-hidden="true">share_location</span>
+          <span id="share-location-label">Share live location only</span>
+        </button>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <a href="#sos-home" aria-current="page">
+        <span class="material-symbols-outlined" aria-hidden="true">sos</span>
+        <span>SOS</span>
+      </a>
+      <a href="route_map.html">
+        <span class="material-symbols-outlined" aria-hidden="true">map</span>
+        <span>Cell Map</span>
+      </a>
+    </nav>
+    <p class="visually-hidden" id="interaction-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+
+  <script src="sos_trigger.js" defer></script>
+</body>
+</html>
